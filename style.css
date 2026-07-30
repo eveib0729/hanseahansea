@@ -1,0 +1,887 @@
+/* ===================================================
+   Student Record System
+   style.css
+=================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --blue:#2f5ea7;
+    --blue2:#4478cb;
+
+    --paper:#fffdf8;
+
+    --border:#d8dce6;
+
+    --bg:#eef2f7;
+
+    --text:#2f2f2f;
+
+    --red:#b12626;
+
+    --shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Noto Sans KR',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    line-height:1.7;
+
+}
+
+/* ==========================
+   Header
+========================== */
+
+.topHeader{
+
+    background:linear-gradient(
+        135deg,
+        var(--blue),
+        var(--blue2)
+    );
+
+    color:white;
+
+    text-align:center;
+
+    padding:42px 20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+}
+
+.topHeader h1{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+.topHeader p{
+
+    margin-top:8px;
+
+    opacity:.85;
+
+    font-size:14px;
+
+}
+
+/* ==========================
+   Tab
+========================== */
+
+.tabMenu{
+
+    display:flex;
+
+    overflow-x:auto;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:500;
+
+    background:white;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.tab{
+
+    flex:1;
+
+    min-width:120px;
+
+    padding:16px;
+
+    border:none;
+
+    background:white;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    font-size:15px;
+
+}
+
+.tab:hover{
+
+    background:#edf3ff;
+
+}
+
+.tab.active{
+
+    background:var(--blue);
+
+    color:white;
+
+}
+
+.secretTab{
+
+    color:var(--red);
+
+}
+
+/* ==========================
+   Page
+========================== */
+
+.page{
+
+    display:none;
+
+    padding:30px 15px;
+
+}
+
+.page.active{
+
+    display:block;
+
+    animation:fade .35s;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(12px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+/* ==========================
+   Paper
+========================== */
+
+.paper{
+
+    position:relative;
+
+    max-width:1000px;
+
+    margin:auto;
+
+    background:var(--paper);
+
+    border-radius:14px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    padding:32px;
+
+    overflow:hidden;
+
+}
+
+/* 종이 질감 */
+
+.paper::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+repeating-linear-gradient(
+
+0deg,
+
+transparent,
+
+transparent 33px,
+
+rgba(0,0,0,.015) 34px
+
+);
+
+pointer-events:none;
+
+}
+
+/* ==========================
+   Title
+========================== */
+
+.paperTitle{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:28px;
+
+    border-bottom:2px solid var(--blue);
+
+    padding-bottom:12px;
+
+}
+
+.paperTitle h2{
+
+    color:var(--blue);
+
+    font-size:28px;
+
+}
+
+.paperTitle span{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+/* ==========================
+   Student Profile
+========================== */
+
+.studentInfo{
+
+    display:flex;
+
+    gap:30px;
+
+    align-items:flex-start;
+
+    margin-bottom:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.photoBox{
+
+    width:190px;
+
+    position:relative;
+
+}
+
+.photoBox img{
+
+    width:100%;
+
+    border-radius:8px;
+
+    border:4px solid #d8dce6;
+
+    box-shadow:0 6px 15px rgba(0,0,0,.12);
+
+    display:block;
+
+}
+
+.stamp{
+
+    position:absolute;
+
+    bottom:-12px;
+
+    right:-12px;
+
+    background:#b12626;
+
+    color:white;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    transform:rotate(-12deg);
+
+    box-shadow:0 4px 10px rgba(0,0,0,.18);
+
+}
+
+.basicTable{
+
+    flex:1;
+
+}
+
+/* ==========================
+   Table
+========================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:12px;
+
+    background:white;
+
+}
+
+th{
+
+    width:160px;
+
+    background:#edf3fc;
+
+    color:#234b86;
+
+    padding:13px;
+
+    border:1px solid #d7dce6;
+
+    text-align:left;
+
+    font-weight:600;
+
+}
+
+td{
+
+    padding:13px;
+
+    border:1px solid #d7dce6;
+
+    background:#fff;
+
+}
+
+hr{
+
+    margin:35px 0;
+
+    border:none;
+
+    border-top:2px dashed #d9d9d9;
+
+}
+
+h3{
+
+    margin-bottom:14px;
+
+    color:#2f5ea7;
+
+}
+
+/* ==========================
+   Comment Box
+========================== */
+
+.commentBox{
+
+    background:#f8fbff;
+
+    border-left:6px solid var(--blue);
+
+    padding:20px;
+
+    border-radius:10px;
+
+    line-height:1.9;
+
+    white-space:pre-line;
+
+}
+
+/* ==========================
+   Health
+========================== */
+
+.warningBox{
+
+    background:#fff4d9;
+
+    border:1px solid #ffd467;
+
+    color:#8a5d00;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    margin-bottom:28px;
+
+    font-weight:500;
+
+}
+
+.medicalBox{
+
+    background:#f8fbff;
+
+    border:1px solid #d9e6ff;
+
+    border-radius:10px;
+
+    padding:18px;
+
+}
+
+.medicalBox ul{
+
+    margin-left:20px;
+
+}
+
+.medicalBox li{
+
+    margin:8px 0;
+
+}
+
+/* ==========================
+   Secret
+========================== */
+
+.secretPaper{
+
+    border:2px solid #b12626;
+
+}
+
+.secretHeader{
+
+    text-align:center;
+
+    margin-bottom:24px;
+
+}
+
+.secretHeader h2{
+
+    color:#b12626;
+
+    letter-spacing:3px;
+
+}
+
+.secretHeader p{
+
+    color:#777;
+
+    margin-top:8px;
+
+}
+
+#openSecret{
+
+    display:block;
+
+    margin:20px auto;
+
+    padding:14px 36px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#1f1f1f;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#openSecret:hover{
+
+    background:#000;
+
+    transform:translateY(-2px);
+
+}
+
+#secretContent{
+
+    display:none;
+
+}
+/* ==========================
+   Password Modal
+========================== */
+
+.passwordModal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(6px);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.passwordBox{
+
+    width:360px;
+
+    max-width:90%;
+
+    background:var(--paper);
+
+    border-radius:16px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+
+    animation:popup .25s ease;
+
+}
+
+.lockIcon{
+
+    font-size:42px;
+
+    margin-bottom:12px;
+
+}
+
+.passwordBox h2{
+
+    color:var(--red);
+
+    margin-bottom:10px;
+
+    letter-spacing:2px;
+
+}
+
+.passwordBox p{
+
+    color:#666;
+
+    margin-bottom:18px;
+
+}
+
+.passwordBox input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #d7dce6;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.2s;
+
+}
+
+.passwordBox input:focus{
+
+    border-color:var(--blue);
+
+    box-shadow:0 0 0 3px rgba(47,94,167,.15);
+
+}
+
+.passwordButtons{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+.passwordButtons button{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.2s;
+
+}
+
+.confirmBtn{
+
+    background:var(--blue);
+
+    color:white;
+
+}
+
+.confirmBtn:hover{
+
+    background:#244b86;
+
+}
+
+.cancelBtn{
+
+    background:#ececec;
+
+}
+
+.cancelBtn:hover{
+
+    background:#dddddd;
+
+}
+
+.passwordError{
+
+    color:var(--red);
+
+    font-size:14px;
+
+    min-height:20px;
+
+    margin-top:12px;
+
+}
+
+/* ==========================
+   Footer
+========================== */
+
+footer{
+
+    margin-top:40px;
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    color:#666;
+
+}
+
+.footerText{
+
+    font-size:16px;
+
+    font-weight:700;
+
+}
+
+.footerSub{
+
+    font-size:13px;
+
+    margin-top:6px;
+
+    opacity:.7;
+
+}
+
+/* ==========================
+   Animation
+========================== */
+
+@keyframes popup{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px) scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:768px){
+
+    .studentInfo{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .photoBox{
+
+        width:160px;
+
+    }
+
+    .paper{
+
+        padding:20px;
+
+    }
+
+    .paperTitle{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:8px;
+
+    }
+
+    .paperTitle h2{
+
+        font-size:22px;
+
+    }
+
+    th{
+
+        width:110px;
+
+        font-size:14px;
+
+    }
+
+    td{
+
+        font-size:14px;
+
+    }
+
+    .tab{
+
+        min-width:100px;
+
+        font-size:14px;
+
+        padding:14px 10px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .topHeader h1{
+
+        font-size:26px;
+
+    }
+
+    .paper{
+
+        border-radius:10px;
+
+        padding:16px;
+
+    }
+
+    .passwordBox{
+
+        padding:22px;
+
+    }
+
+}
+
+/* ==========================
+   Scrollbar
+========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+    height:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#9aa9c6;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#edf2f7;
+
+}
